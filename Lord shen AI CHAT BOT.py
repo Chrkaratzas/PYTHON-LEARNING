@@ -6,7 +6,7 @@ import random
 import threading
 import webbrowser
 
-#  jokes list and initial setup remain unchanged
+#  jokes list and initial setup remain unchangedg
 jokes = [
     "Why don't scientists trust atoms? Because they make up everything.",
     "I told my wife she should embrace her mistakes. She gave me a hug.",
@@ -150,23 +150,24 @@ class VoiceAssistantGUI:
                 elif "solve" in text:
                     a = text.split()
                     x = a.index("solve")
-                    lesson = a[x+1]
+                    lesson = a[x+1:]
+                    lesson = " ".join(lesson)
                     if lesson == "algebra":
                         webbrowser.open_new("https://lisari.gr/courses/algevra-a-lykeiou/")
                         self.speak("This is algebra solutions , choose the page and see!!!")
                     elif lesson == "geometry":
                         webbrowser.open_new("https://lisari.gr/courses/geometria-a-lykeiou/")
                         self.speak("This is geometry solutions , choose the page and see!!!")
-                    elif lesson == "ancient greek":
+                    elif lesson == "ancient Greek":
                         webbrowser.open_new("https://lisari.gr/courses/archaia-a-lykeiou/")
                         self.speak("This is ancient greek solutions , choose the page and see!!!")
                     elif lesson == "biology":
                         webbrowser.open_new("https://lisari.gr/courses/viologia-a-lykeiou/")
                         self.speak("This is biology solutions , choose the page and see!!!")
-                    elif lesson == "english":
+                    elif lesson == "English":
                         webbrowser.open_new("https://lisari.gr/courses/anglika-a-lykeiou/")
                         self.speak("This is english solutions , choose the page and see!!!")
-                    elif lesson == "french":
+                    elif lesson == "French":
                         webbrowser.open_new("https://lisari.gr/courses/gallika-a-lykeiou/")
                         self.speak("This is french solutions , choose the page and see!!!")
                     elif lesson == "physics":
