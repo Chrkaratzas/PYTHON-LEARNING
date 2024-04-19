@@ -17,17 +17,19 @@ def plus():
     e.delete(0, END)
 
 def equal():
-    number = e.get()
-    e.delete(0, END)
-    numbers.append(int(number))
-    # Initialize a variable to store the sum
-    total_sum = 0
-    # Loop through each number in the list
-    for number in numbers:
-        total_sum = total_sum + number  # Add each number to the total sum
-    e.insert(0, total_sum)
-    numbers.clear()
-
+    try:
+        number = e.get()
+        e.delete(0, END)
+        numbers.append(int(number))
+        # Initialize a variable to store the sum
+        total_sum = 0
+        # Loop through each number in the list
+        for number in numbers:
+            total_sum = total_sum + number  # Add each number to the total sum
+        e.insert(0, total_sum)
+        numbers.clear()
+    except ValueError:
+        clear()
 def clear():
     e.delete(0,END)
     numbers.clear()
